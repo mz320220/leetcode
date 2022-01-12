@@ -6,9 +6,9 @@ package greedyAlgorithm;
 public class CanPlaceFlowers {
 
     public static void main(String[] args) {
-        int[] flowerbed = {1};
-        int n = 1;
-        System.out.println(canPlaceFlowers(flowerbed, 0));
+        int[] flowerbed = {1,0,0,0,0,0,1};
+        int n = 2;
+        System.out.println(canPlaceFlowers(flowerbed, n));
     }
 
     public static boolean canPlaceFlowers(int[] flowerbed, int n) {
@@ -27,13 +27,14 @@ public class CanPlaceFlowers {
             }
             if (i == size - 1) {
                 if (flowerbed[i] == 0 && flowerbed[i - 1] == 0) {
-                    flowerbed[i] = 1;
+                    //flowerbed[i] = 1;
                     sum++;
                 }
                 continue;
             }
             if (flowerbed[i - 1] == 0 && flowerbed[i] == 0 && flowerbed[i + 1] == 0) {
                 flowerbed[i] = 1;
+                i+=1; //可以跳过一个
                 sum++;
             }
         }
