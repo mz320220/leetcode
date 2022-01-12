@@ -20,7 +20,7 @@ public class NonoverlappingIntervals {
             return p1[1] -p2[1];
         });
         int num = 0;
-        int start = intervals[0][1];
+        int start = intervals[0][1]; //从排序后第一个区间的末尾作为初始点，和后一个区间起点作比较
         for (int i = 1; i < intervals.length; i++) {
             if (intervals[i][0] < start) {
                 num++;
