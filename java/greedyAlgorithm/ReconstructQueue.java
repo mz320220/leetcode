@@ -27,7 +27,7 @@ public class ReconstructQueue {
             /**
              * 按照p[1]顺序进行插入
              */
-            res.add(p[1], p);
+            res.add(p[1], p); //可以看下具体实现：System.arraycopy实现移动留出空位并插入
         }
         return res.toArray(people);
     }
