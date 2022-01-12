@@ -16,6 +16,7 @@ public class ReconstructQueue {
 
     public static int[][] reconstructQueue(int[][] people) {
         Arrays.sort(people, (p1, p2) -> {
+            //1、按照身高倒序排列 2、按照前面人数升序排列
             if (p1[0] == p2[0]) {
                 return p1[1] - p2[1];
             } else {
