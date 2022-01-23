@@ -8,8 +8,8 @@ import java.util.Arrays;
 public class MinSubArrayLen {
 
     public static void main(String[] args) {
-        int target = 7;
-        int[] nums = {2, 3, 1, 2, 4, 3};
+        int target = 11;
+        int[] nums = {1,1,1,1,1,1,1,1};
         System.out.println(minSubArrayLen(target, nums));
     }
 
@@ -25,7 +25,7 @@ public class MinSubArrayLen {
         int left = 0;
         int size = 0;
         int sum = 0;
-        while (right < nums.length) {
+        while (right < nums.length) { //left <= right条件可以省略：题目中nums[i]>=1,所以循环中不会出现此种场景
             sum += nums[right++];
             while (sum >= target) {
                 int wide = right - left;
