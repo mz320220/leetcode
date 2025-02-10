@@ -8,9 +8,9 @@ import java.util.Arrays;
 public class Rotate {
 
     public static void main(String[] args) {
-        int[] nums = {1,2,3,4,5,6,7};
+        int[] nums = {1, 2, 3, 4, 5, 6, 7};
         int k = 3;
-        rotate2_2(nums, k);
+        rotate3(nums, k);
         System.out.println(Arrays.toString(nums));
     }
 
@@ -70,6 +70,21 @@ public class Rotate {
 
     //方法 3：数组翻转
     public static void rotate3(int[] nums, int k) {
+        int size = nums.length;
+        k = k % size;
+        reverse(nums, 0, size - 1);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, size - 1);
+    }
+
+    public static void reverse(int[] nums, int start, int end) {
+        while (start < end) {
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
+        }
 
     }
 }
