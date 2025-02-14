@@ -17,7 +17,7 @@ public class CompletableFutureDemo {
         // T2
         CompletableFuture<Void> futureT2 = CompletableFuture.runAsync(() -> {
             System.out.println("T2 is executing. Current time：" + DateUtil.now());
-            ThreadUtil.sleep(1000);
+            ThreadUtil.sleep(2500);
         });
 
         // 使用allOf()方法合并T1和T2的CompletableFuture，等待它们都完成
